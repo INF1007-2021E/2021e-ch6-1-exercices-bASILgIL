@@ -1,52 +1,49 @@
 test_anagram (__main__.TestExercice) ... FAIL
-test_doubles (__main__.TestExercice) ... FAIL
+test_doubles (__main__.TestExercice) ... ok
 test_frequence (__main__.TestExercice) ... FAIL
-test_grades (__main__.TestExercice) ... FAIL
-test_order (__main__.TestExercice) ... FAIL
+test_grades (__main__.TestExercice) ... ok
+test_order (__main__.TestExercice) ... ERROR
+
+======================================================================
+ERROR: test_order (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 19, in test_order
+    output = [exercice.order(v) for v in values]
+  File "test_exercice.py", line 19, in <listcomp>
+    output = [exercice.order(v) for v in values]
+  File "/home/runner/work/2021e-ch6-1-exercices-bASILgIL/2021e-ch6-1-exercices-bASILgIL/exercice.py", line 13, in order
+    sorted_values = ", ".join(sorted(values))#sorted() doesnt affect the list permanently but .sort() changes the list and it stays changed
+TypeError: sequence item 0: expected str instance, int found
 
 ======================================================================
 FAIL: test_anagram (__main__.TestExercice)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:/Users/basil/Documents/GitHub/2021e-ch6-1-exercices-bASILgIL/test_exercice.py", line 37, in test_anagram
+  File "test_exercice.py", line 37, in test_anagram
     self.assertEqual(
-AssertionError: Lists differ: [False, False] != [True, False]
+AssertionError: Lists differ: [None, None] != [True, False]
 
 First differing element 0:
-False
+None
 True
 
-- [False, False]
-+ [True, False] : Erreur dans la vérification de l'anagramme
-
-======================================================================
-FAIL: test_doubles (__main__.TestExercice)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "C:/Users/basil/Documents/GitHub/2021e-ch6-1-exercices-bASILgIL/test_exercice.py", line 52, in test_doubles
-    self.assertListEqual(
-AssertionError: Lists differ: [False, False] != [False, True]
-
-First differing element 1:
-False
-True
-
-- [False, False]
-+ [False, True] : Erreur dans les doublons
+- [None, None]
++ [True, False] : Erreur dans la vÃ©rification de l'anagramme
 
 ======================================================================
 FAIL: test_frequence (__main__.TestExercice)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:/Users/basil/Documents/GitHub/2021e-ch6-1-exercices-bASILgIL/test_exercice.py", line 80, in test_frequence
+  File "test_exercice.py", line 80, in test_frequence
     self.assertListEqual(
-AssertionError: Lists differ: [{}, {}] != [{'B': 1, 'o': 4, 'n': 2, 'j': 2, 'u': 2, '[188 chars]: 1}]
+AssertionError: Lists differ: [None, None] != [{'B': 1, 'o': 4, 'n': 2, 'j': 2, 'u': 2, [189 chars]: 1}]
 
 First differing element 0:
-{}
+None
 {'B': 1, 'o': 4, 'n': 2, 'j': 2, 'u': 2, 'r': 2, ',': 1, ' ': 1, 'b': 1}
 
-- [{}, {}]
+- [None, None]
 + [{' ': 1, ',': 1, 'B': 1, 'b': 1, 'j': 2, 'n': 2, 'o': 4, 'r': 2, 'u': 2},
 +  {' ': 5,
 +   "'": 1,
@@ -69,32 +66,7 @@ First differing element 0:
 +   't': 2,
 +   'u': 2}] : Erreur dans les histogrammes
 
-======================================================================
-FAIL: test_grades (__main__.TestExercice)
 ----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "C:/Users/basil/Documents/GitHub/2021e-ch6-1-exercices-bASILgIL/test_exercice.py", line 65, in test_grades
-    self.assertDictEqual(
-AssertionError: {} != {'Sam': 85}
-- {}
-+ {'Sam': 85} : Erreur dans les notes
+Ran 5 tests in 0.001s
 
-======================================================================
-FAIL: test_order (__main__.TestExercice)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "C:/Users/basil/Documents/GitHub/2021e-ch6-1-exercices-bASILgIL/test_exercice.py", line 22, in test_order
-    self.assertListEqual(
-AssertionError: Lists differ: [[1, 9, -2, 6], ['a', '2', 'hello']] != [[-2, 1, 6, 9], ['2', 'a', 'hello']]
-
-First differing element 0:
-[1, 9, -2, 6]
-[-2, 1, 6, 9]
-
-- [[1, 9, -2, 6], ['a', '2', 'hello']]
-+ [[-2, 1, 6, 9], ['2', 'a', 'hello']] : Mauvais ordre
-
-----------------------------------------------------------------------
-Ran 5 tests in 0.003s
-
-FAILED (failures=5)
+FAILED (failures=2, errors=1)
