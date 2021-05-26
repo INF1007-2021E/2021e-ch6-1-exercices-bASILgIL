@@ -73,12 +73,19 @@ def frequence(sentence: str) -> dict:
 
 def get_recipes():
     # TODO: Demander le nom d'une recette, puis ses ingredients et enregistrer dans une structure de données
-    pass
+    recette = input("Quelle recette desirez-vous preparer? \n")
+    ingredients = input("Nommez les ingredients de cette recette.  Svp separer les par une virgule").split(",")
+    return {recette: ingredients}
 
 
 def print_recipe(ingredients) -> None:
     # TODO: Demander le nom d'une recette, puis l'afficher si elle existe
-    pass
+    recette = input("Quelle recette desirez-vous preparer? \n")
+    if recette in ingredients:
+        print(ingredients[recette])
+    else:
+        print("La recette n'existe pas.")
+        print_recipe(ingredients)
 
 
 def main() -> None:
